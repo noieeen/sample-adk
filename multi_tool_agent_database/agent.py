@@ -53,8 +53,12 @@ def get_current_time(city: str) -> dict:
     return {"status": "success", "report": report}
 
 
-model = os.getenv("LM_STUDIO_MODEL", "")
-api_base_url = os.getenv("OPENAI_API_BASE", "")
+# root_agent = Agent(
+#     model="gemini-2.0-flash",
+
+# )
+
+model = os.getenv("OLLAMA_MODEL", "")
 
 root_agent = Agent(
     model=LiteLlm(model=model),

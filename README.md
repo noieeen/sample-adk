@@ -87,3 +87,8 @@ If your ADK install requires selecting the agent entry-point, set your Python pa
 - If requests fail, verify your local LLM endpoint is up and that `OPENAI_API_BASE` (if used) matches it.
 - Ensure the model names in `LM_STUDIO_MODEL` or `OLLAMA_MODEL` exactly match what your runtime expects.
 - Recreate your virtual environment if dependencies conflict.
+
+
+
+
+## toolbox --tools-file ./toolbox/tools.yaml

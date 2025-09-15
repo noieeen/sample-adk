@@ -1,0 +1,28 @@
+sources:
+  bcrm-dev:
+    kind: mssql
+    host: ${DATABASE_HOST}
+    port: ${DATABASE_PORT}
+    database: ${DATABASE_NAME}
+    user: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+
+tools:
+  count-customer:
+    kind: mssql-sql
+    source: bcrm-dev
+    description: Count the customers in system.
+    # parameters:
+    #   - name: name
+    #     type: string
+    #     description: The name of the hotel.
+    statement: SELECT COUNT(*) AS TotalCustomers FROM CRM_Customer;
+  execute_sql_tool:
+    kind: mssql-execute-sql
+    source: bcrm-dev
+    description: Use this tool to execute sql statement.
+
+toolsets:
+  my-toolset:
+    - execute_sql_tool
+    - count-customer
